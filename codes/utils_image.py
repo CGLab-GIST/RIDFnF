@@ -1,4 +1,4 @@
-# Functions of this script came from the repository of FFDNet.
+# Some functions of this script came from the repository of FFDNet.
 
 import inspect
 import numpy as np
