@@ -31,19 +31,23 @@ Please install docker and nvidia-docker.
 - Installation nividia-docker [[guide]](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
 ### 2. Building docker
 1. On a terminal, access the directory located on `Dockerfile` and run a command to build a docker image:
+
     ```
     docker build -t rid_fnf .
     ```
 2. After building a docker image, create a container:
+
     ```
     nvidia-docker run -v ${PWD}/data:/data -v ${PWD}/codes:/codes -it rid_fnf;
     ```
     Or, simply run `run_docker.sh`.
+    
     ```
     ./run_docker.sh
     ```
 ## Test with a pre-trained network
 1. Setup configurations in `config.py`.
+
     ```
     # Mode selection [TRAINING, TEST]
     config["mode"] = "TEST"
@@ -62,11 +66,13 @@ Please install docker and nvidia-docker.
     ```
 2. Run a command on the terminal launched container (bash terminal for building docker, `2.2 of Setup`).
    - The result images will be saved in `/data/config['task']/output`.
+
     ```
     python main.py
     ```
 ## Test using real noise images with a pre-trained network 
 1. Setup configurations in `config.py`.
+
     ```
     # Mode selection [TRAINING, TEST]
     config["mode"] = "TEST"
@@ -77,6 +83,7 @@ Please install docker and nvidia-docker.
     ```
 2. Run a command on the terminal launched container (bash terminal for building docker, `2.2 of Setup`).
    - The result images will be saved in `/data/__real_test__/real_images/output`.
+
     ```
     python test_for_real.py
     ```
@@ -87,6 +94,7 @@ Please install docker and nvidia-docker.
 
 
 2. Setup configurations in `config.py`.
+
     ```
     # Mode selection [TRAINING, TEST]
     config["mode"] = "TRAINING"
@@ -107,6 +115,7 @@ Please install docker and nvidia-docker.
     ```
 3. Run a command on the terminal (the bash terminal for building docker, `2.2 of Setup`).
    - After training, the result images will be saved in `/data/config['task']/output`.
+
     ```
     python main.py
     ```
